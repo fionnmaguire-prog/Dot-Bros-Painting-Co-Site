@@ -13,6 +13,8 @@ const estimateResetButton = document.querySelector('#estimate-reset')
 const estimateStatus = document.querySelector('#estimate-status')
 const projectTypeNote = document.querySelector('#project-type-note')
 const submitButton = document.querySelector('#estimate-submit')
+const aboutSection = document.querySelector('#about')
+const aboutLinks = document.querySelectorAll('a[href="#about"]')
 
 // Web3Forms configuration lives here. Add the real access key in a local .env file
 // or deployment environment using VITE_WEB3FORMS_ACCESS_KEY.
@@ -170,11 +172,21 @@ function updateParallax() {
 
   const scrollOffset = Math.min(window.scrollY, 900)
   const viewportHeight = Math.max(window.innerHeight, 1)
+  const isMobileViewport = window.innerWidth <= 720
 
   parallaxElements.forEach((element) => {
-    const speed = Number(element.dataset.parallaxSpeed ?? '0')
-    const min = Number(element.dataset.parallaxMin ?? Number.NEGATIVE_INFINITY)
-    const max = Number(element.dataset.parallaxMax ?? Number.POSITIVE_INFINITY)
+    const speedValue = isMobileViewport
+      ? element.dataset.parallaxSpeedMobile ?? element.dataset.parallaxSpeed ?? '0'
+      : element.dataset.parallaxSpeed ?? '0'
+    const speed = Number(speedValue)
+    const minValue = isMobileViewport
+      ? element.dataset.parallaxMinMobile ?? element.dataset.parallaxMin ?? String(Number.NEGATIVE_INFINITY)
+      : element.dataset.parallaxMin ?? String(Number.NEGATIVE_INFINITY)
+    const maxValue = isMobileViewport
+      ? element.dataset.parallaxMaxMobile ?? element.dataset.parallaxMax ?? String(Number.POSITIVE_INFINITY)
+      : element.dataset.parallaxMax ?? String(Number.POSITIVE_INFINITY)
+    const min = Number(minValue)
+    const max = Number(maxValue)
     const mode = element.dataset.parallaxMode ?? 'page'
     let translateY = scrollOffset * speed
 
@@ -511,6 +523,33 @@ function initializeEstimateForm() {
   updateProjectTypeMessaging()
 }
 
+function clearAboutHash() {
+  if (window.location.hash !== '#about') {
+    return
+  }
+
+  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+}
+
+function initializeAboutLinks() {
+  if (!aboutSection || aboutLinks.length === 0) {
+    clearAboutHash()
+    return
+  }
+
+  clearAboutHash()
+
+  aboutLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault()
+      aboutSection.scrollIntoView({
+        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    })
+  })
+}
+
 window.addEventListener('resize', () => {
   updateIntroGeometry()
   requestParallaxUpdate()
@@ -532,3 +571,4 @@ updateParallax()
 initializeTrustReveal()
 initializeProcessReveal()
 initializeEstimateForm()
+initializeAboutLinks()
