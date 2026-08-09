@@ -1186,7 +1186,7 @@ h3 {
 
 .pricing-range-value {
   font-size: clamp(2.585rem, 4.51vw, 3.465rem);
-  color: var(--paint-accent-strong);
+  color: var(--focus);
 }
 
 .pricing-range-unit {
@@ -1374,7 +1374,7 @@ h3 {
   font-size: 1.19rem;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: rgba(47, 91, 73, 0.9);
+  color: var(--focus);
   text-align: center;
 }
 
@@ -1418,7 +1418,7 @@ h3 {
   font-size: 1.82rem;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--paint-accent-strong);
+  color: var(--focus);
 }
 
 .pricing-note {
