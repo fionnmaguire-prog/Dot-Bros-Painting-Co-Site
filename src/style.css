@@ -2221,6 +2221,10 @@ h3 {
     padding-inline: 0.8rem;
   }
 
+  .hero-composition {
+    padding-bottom: 5.2rem;
+  }
+
   .section-frame {
     padding: 1rem;
   }
@@ -2269,8 +2273,15 @@ h3 {
   }
 
   .hero-about-link {
-    top: 0;
+    top: auto;
     right: 0;
+    bottom: 0;
+    left: 0;
+    width: fit-content;
+    min-height: 4.42rem;
+    padding-inline: 1.87rem;
+    margin-inline: auto;
+    font-size: 1.09rem;
   }
 
   .hero-logo-stack {
@@ -2279,38 +2290,39 @@ h3 {
   }
 
   .hero-logo-dots {
+    top: clamp(-1.9rem, -6vw, -0.95rem);
     width: var(--hero-logo-dots-width);
   }
 
   .hero-logo-text {
-    top: clamp(-2.6rem, -8vw, -1.35rem);
+    top: clamp(-1rem, -3vw, -0.35rem);
     width: var(--hero-logo-text-width);
   }
 
   .hero-mission {
     width: min(100%, 24rem);
-    bottom: 2.05rem;
+    bottom: 6rem;
   }
 
   .hero-cutout-row {
     width: min(calc(100vw - 0.8rem), 31rem);
-    bottom: -2.85rem;
+    bottom: -4.35rem;
     align-items: flex-end;
     gap: 0.35rem;
     padding-inline: 0;
   }
 
   .hero-cutout {
-    width: min(49%, 15.5rem);
+    width: min(47.5%, 14.25rem);
     max-height: 22rem;
   }
 
   .hero-cutout-left {
-    margin-left: clamp(-0.8rem, -2vw, -0.35rem);
+    margin-left: clamp(-0.45rem, -1.2vw, -0.2rem);
   }
 
   .hero-cutout-right {
-    margin-right: clamp(-1.8rem, -4vw, -0.75rem);
+    margin-right: clamp(-0.45rem, -1.2vw, -0.2rem);
   }
 
   .service-media,
