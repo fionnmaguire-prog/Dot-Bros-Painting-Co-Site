@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional interior and exterior painting, custom murals, branded walls and property refreshes across Los Angeles."
+    />
+    <meta name="theme-color" content="#d7643a" />
+    <title>DotBros Painting Co. | Los Angeles Painting</title>
+  </head>
+  <body>
+    <script>
+      document.documentElement.classList.add('js-enabled')
+      document.body.classList.add('intro-active', 'play-intro')
+      window.__dotBrosIntroFailsafe = window.setTimeout(() => {
+        document.body.classList.add('intro-complete')
+        document.body.classList.remove('intro-active', 'play-intro')
+
+        const introOverlay = document.querySelector('[data-intro-overlay]')
+        if (introOverlay) {
+          introOverlay.hidden = true
+        }
+      }, 5000)
+    </script>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="intro-overlay" data-intro-overlay aria-hidden="true">
+      <div class="intro-stage">
+        <div class="intro-neutral"></div>
+        <div class="intro-paint">
+          <div class="intro-edge"></div>
+        </div>
+        <div class="intro-roller">
+          <img
+            src="/assets/icons/green%20paint%20roller%20vector.svg"
+            alt=""
+            role="presentation"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <div class="site-shell">
+      <main id="main-content">
+        <section class="hero section">
+          <div class="section-frame hero-composition">
+            <a class="hero-about-link button button-secondary button-small intro-reveal" href="#about">
+              About Us
+            </a>
+
+            <div class="hero-stage" aria-hidden="true">
+              <div class="hero-logo-stack">
+                <img
+                  class="hero-logo-dots intro-sequence intro-sequence-dots"
+                  src="/assets/logo/logo%20dots.png"
+                  alt=""
+                  data-parallax
+                  data-parallax-speed="-0.11"
+                />
+                <img
+                  class="hero-logo-text intro-sequence intro-sequence-logo"
+                  src="/assets/logo/Dot%20Bros%20Logo%20Text.png"
+                  alt="Dot Bros Painting Co."
+                  data-parallax
+                  data-parallax-speed="0.07"
+                />
+              </div>
+
+              <div class="hero-cutout-row">
+                <img
+                  class="hero-cutout hero-cutout-left intro-sequence intro-sequence-cutout"
+                  src="/assets/hero/joshcutout.png"
+                  alt=""
+                  data-parallax
+                  data-parallax-speed="0.095"
+                  data-parallax-max="64"
+                />
+                <img
+                  class="hero-cutout hero-cutout-right intro-sequence intro-sequence-cutout"
+                  src="/assets/hero/fionncutout.png"
+                  alt=""
+                  data-parallax
+                  data-parallax-speed="0.13"
+                  data-parallax-max="64"
+                />
+              </div>
+            </div>
+
+            <div class="hero-mission">
+              <h1 class="intro-reveal">Pro Painting. Pro Service. <span class="hero-nowrap">Pain Free Pricing.</span></h1>
+              <a class="hero-phone intro-reveal" href="tel:+12133487009">(213) 348-7009</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-strip section" aria-label="Why people hire DotBros">
+          <div class="section-frame">
+            <ul class="trust-list">
+              <li data-parallax data-parallax-speed="0.055" data-parallax-max="24">
+                <span class="trust-copy">Clear project scopes</span>
+              </li>
+              <li data-parallax data-parallax-speed="0.07" data-parallax-max="30">
+                <span class="trust-copy">Careful preparation<br />and cleanup</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <div class="section-frame">
+            <div class="section-heading">
+              <h2>Painting work that covers everyday refreshes and standout creative surfaces.</h2>
+            </div>
+
+            <div class="services-grid">
+              <article class="service-card">
+                <div class="service-copy">
+                  <h3>Interior Painting.</h3>
+                  <div class="service-summary">
+                    <ul>
+                      <li>Walls and ceilings</li>
+                      <li>Accent walls</li>
+                      <li>Patching and clean edges</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <div class="service-copy">
+                  <h3>Exterior Painting.</h3>
+                  <div class="service-summary">
+                    <ul>
+                      <li>Exterior walls and trim</li>
+                      <li>Prep work</li>
+                      <li>Surface protection</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <div class="service-copy">
+                  <h3>Branding and Murals.</h3>
+                  <div class="service-summary">
+                    <ul>
+                      <li>Logos</li>
+                      <li>Feature walls</li>
+                      <li>Custom mural painting</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <div class="service-copy">
+                  <h3>Property Maintenance.</h3>
+                  <div class="service-summary">
+                    <ul>
+                      <li>Dry wall repair</li>
+                      <li>Touchups and patching</li>
+                      <li>Cosmetic repairs</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="process">
+          <div class="section-frame">
+            <div class="section-heading">
+              <h2>Our Process.</h2>
+            </div>
+
+            <ol class="process-grid">
+              <li class="process-card">
+                <span class="process-number">1</span>
+                <h3>Tell us about your project.</h3>
+              </li>
+              <li class="process-card">
+                <span class="process-number">2</span>
+                <h3>Site visit or photo assessment.</h3>
+              </li>
+              <li class="process-card">
+                <span class="process-number">3</span>
+                <h3>Review scope, timing and pricing.</h3>
+              </li>
+              <li class="process-card">
+                <span class="process-number">4</span>
+                <h3>Preparation, painting and final walkthrough.</h3>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section" id="pricing">
+          <div class="section-frame pricing-shell">
+            <div class="section-heading">
+              <h2>Our Pricing.</h2>
+            </div>
+
+            <div class="pricing-grid">
+              <article class="pricing-card">
+                <h3>Interior Walls</h3>
+                <p class="pricing-range">
+                  <span class="pricing-range-prefix">Starting at</span>
+                  <span class="pricing-range-value">$0.90</span>
+                  <span class="pricing-range-unit">PER WALL SQ FT</span>
+                </p>
+              </article>
+
+              <article class="pricing-card">
+                <h3>Interior Ceilings</h3>
+                <p class="pricing-range">
+                  <span class="pricing-range-prefix">Starting at</span>
+                  <span class="pricing-range-value">$1.20</span>
+                  <span class="pricing-range-unit">PER CEILING SQ FT</span>
+                </p>
+              </article>
+            </div>
+
+            <div class="pricing-subsection pricing-subsection-room-estimates">
+              <h3>Typical Room Estimates.</h3>
+            </div>
+
+            <div class="pricing-room-estimates-stack">
+              <p class="pricing-subsection-note">
+                Room estimates assume standard 8 ft ceilings.
+              </p>
+              <div class="room-estimates-grid">
+                <article class="room-estimate-card">
+                  <div class="room-estimate-header">
+                    <div class="room-estimate-heading-block">
+                      <h4>Bathroom</h4>
+                      <p class="room-estimate-size">Approx. wall area: 220 sq ft</p>
+                      <p class="room-estimate-size">Approx. ceiling area: 40 sq ft</p>
+                    </div>
+                    <div class="room-estimate-materials" aria-label="Estimated materials">
+                      <p class="room-estimate-materials-title">Estimated Materials</p>
+                      <div class="room-estimate-materials-grid">
+                        <strong>$45</strong>
+                        <strong>$130</strong>
+                        <img
+                          class="room-estimate-materials-arrow"
+                          src="/assets/icons/arrow.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        <span>Basic</span>
+                        <span>Premium</span>
+                      </div>
+                    </div>
+                  </div>
+                  <dl class="room-estimate-values">
+                    <div>
+                      <dt>Walls</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$200</span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Walls + Ceiling</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$250</span>
+                      </dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="room-estimate-card">
+                  <div class="room-estimate-header">
+                    <div class="room-estimate-heading-block">
+                      <h4>Standard Bedroom</h4>
+                      <p class="room-estimate-size">Approx. wall area: 350 sq ft</p>
+                      <p class="room-estimate-size">Approx. ceiling area: 120 sq ft</p>
+                    </div>
+                    <div class="room-estimate-materials" aria-label="Estimated materials">
+                      <p class="room-estimate-materials-title">Estimated Materials</p>
+                      <div class="room-estimate-materials-grid">
+                        <strong>$70</strong>
+                        <strong>$220</strong>
+                        <img
+                          class="room-estimate-materials-arrow"
+                          src="/assets/icons/arrow.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        <span>Basic</span>
+                        <span>Premium</span>
+                      </div>
+                    </div>
+                  </div>
+                  <dl class="room-estimate-values">
+                    <div>
+                      <dt>Walls</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$315</span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Walls + Ceiling</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$460</span>
+                      </dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="room-estimate-card">
+                  <div class="room-estimate-header">
+                    <div class="room-estimate-heading-block">
+                      <h4>Large Bedroom</h4>
+                      <p class="room-estimate-size">Approx. wall area: 415 sq ft</p>
+                      <p class="room-estimate-size">Approx. ceiling area: 160 sq ft</p>
+                    </div>
+                    <div class="room-estimate-materials" aria-label="Estimated materials">
+                      <p class="room-estimate-materials-title">Estimated Materials</p>
+                      <div class="room-estimate-materials-grid">
+                        <strong>$70</strong>
+                        <strong>$220</strong>
+                        <img
+                          class="room-estimate-materials-arrow"
+                          src="/assets/icons/arrow.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        <span>Basic</span>
+                        <span>Premium</span>
+                      </div>
+                    </div>
+                  </div>
+                  <dl class="room-estimate-values">
+                    <div>
+                      <dt>Walls</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$375</span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Walls + Ceiling</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$570</span>
+                      </dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="room-estimate-card">
+                  <div class="room-estimate-header">
+                    <div class="room-estimate-heading-block">
+                      <h4>Living Room</h4>
+                      <p class="room-estimate-size">Approx. wall area: 510 sq ft</p>
+                      <p class="room-estimate-size">Approx. ceiling area: 250 sq ft</p>
+                    </div>
+                    <div class="room-estimate-materials" aria-label="Estimated materials">
+                      <p class="room-estimate-materials-title">Estimated Materials</p>
+                      <div class="room-estimate-materials-grid">
+                        <strong>$105</strong>
+                        <strong>$330</strong>
+                        <img
+                          class="room-estimate-materials-arrow"
+                          src="/assets/icons/arrow.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        <span>Basic</span>
+                        <span>Premium</span>
+                      </div>
+                    </div>
+                  </div>
+                  <dl class="room-estimate-values">
+                    <div>
+                      <dt>Walls</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$460</span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Walls + Ceiling</dt>
+                      <dd>
+                        <span class="room-estimate-starting">Starting at</span>
+                        <span class="room-estimate-price">$760</span>
+                      </dd>
+                    </div>
+                  </dl>
+                </article>
+              </div>
+
+              <p class="pricing-intro pricing-guide-summary">
+                <span class="pricing-guide-summary-paragraph">
+                  Guide prices are based on the approximate paintable
+                  surface area, not the floor area of the room. Wall and ceiling
+                  labour is priced separately, with estimated material costs shown
+                  for reference.
+                </span>
+                <span class="pricing-guide-summary-paragraph">
+                  Final quotations are provided following a project
+                  assessment and may vary depending on surface condition, paint
+                  selection, preparation requirements, and overall project scope.
+                </span>
+              </p>
+            </div>
+
+            <div class="pricing-custom-projects">
+              <h3>Exterior Painting, Murals &amp; Custom Projects.</h3>
+              <div class="pricing-custom-card">
+                <p>
+                  Every exterior painting, mural, and branded graphics project is
+                  unique. Factors such as property size, surface condition,
+                  access, preparation, design complexity, and material selection
+                  all influence the final cost. To provide an accurate and fair
+                  price, we recommend contacting us for a free consultation and
+                  detailed written estimate tailored to your project.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="section estimate-section" id="estimate">
+          <div class="section-frame estimate-shell">
+            <div class="section-heading estimate-heading">
+              <h2>Request a Free Estimate.</h2>
+              <p>
+                Tell us a little about your project and we'll get back to you to
+                discuss the details and provide an accurate estimate.
+              </p>
+              <p class="estimate-heading-note">
+                Have a straightforward interior repaint? See our
+                <a href="#pricing">pricing guide</a> above.
+              </p>
+            </div>
+
+            <div class="estimate-card">
+              <form class="estimate-form" id="estimate-form" novalidate>
+                <input type="hidden" name="access_key" value="" />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New Dot Bros Painting Estimate Request"
+                />
+                <input type="hidden" name="from_name" value="Dot Bros Website" />
+                <input type="hidden" name="page_url" value="" />
+                <input
+                  class="botcheck-field"
+                  type="text"
+                  name="botcheck"
+                  tabindex="-1"
+                  autocomplete="off"
+                  aria-hidden="true"
+                />
+
+                <div class="estimate-form-grid">
+                  <div class="form-field" data-field="name">
+                    <label class="field-label" for="estimate-name">Full Name</label>
+                    <input
+                      class="field-input"
+                      id="estimate-name"
+                      name="name"
+                      type="text"
+                      autocomplete="name"
+                      required
+                    />
+                    <p class="field-error" id="error-name" aria-live="polite"></p>
+                  </div>
+
+                  <div class="form-field" data-field="phone">
+                    <label class="field-label" for="estimate-phone">Phone Number</label>
+                    <input
+                      class="field-input"
+                      id="estimate-phone"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                      required
+                    />
+                    <p class="field-error" id="error-phone" aria-live="polite"></p>
+                  </div>
+
+                  <div class="form-field" data-field="email">
+                    <label class="field-label" for="estimate-email">Email Address</label>
+                    <input
+                      class="field-input"
+                      id="estimate-email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      required
+                    />
+                    <p class="field-error" id="error-email" aria-live="polite"></p>
+                  </div>
+
+                  <div class="form-field" data-field="property_location">
+                    <label class="field-label" for="estimate-location">Property Location</label>
+                    <input
+                      class="field-input"
+                      id="estimate-location"
+                      name="property_location"
+                      type="text"
+                      placeholder="Hollywood, Studio City, North Hollywood, etc."
+                      autocomplete="address-level2"
+                      required
+                    />
+                    <p class="field-error" id="error-property_location" aria-live="polite"></p>
+                  </div>
+
+                  <fieldset class="form-field form-field-span-2 form-fieldset" data-field="project_type">
+                    <legend class="field-label">Project Type</legend>
+                    <div class="choice-grid choice-grid-project">
+                      <label class="choice-card">
+                        <input class="choice-input" type="radio" name="project_type" value="Interior Painting" />
+                        <span>Interior Painting</span>
+                      </label>
+                      <label class="choice-card">
+                        <input class="choice-input" type="radio" name="project_type" value="Exterior Painting" />
+                        <span>Exterior Painting</span>
+                      </label>
+                      <label class="choice-card">
+                        <input class="choice-input" type="radio" name="project_type" value="Interior + Exterior" />
+                        <span>Interior + Exterior</span>
+                      </label>
+                      <label class="choice-card">
+                        <input class="choice-input" type="radio" name="project_type" value="Mural" />
+                        <span>Mural</span>
+                      </label>
+                      <label class="choice-card">
+                        <input class="choice-input" type="radio" name="project_type" value="Branding / Graphics" />
+                        <span>Branding / Graphics</span>
+                      </label>
+                      <label class="choice-card">
+                        <input class="choice-input" type="radio" name="project_type" value="Other" />
+                        <span>Other</span>
+                      </label>
+                    </div>
+                    <p class="field-error" id="error-project_type" aria-live="polite"></p>
+                    <p class="field-note project-type-note" id="project-type-note" hidden>
+                      These projects vary considerably in scope, preparation,
+                      access and design requirements. We'll discuss the project
+                      with you before providing a detailed quote.
+                    </p>
+                  </fieldset>
+
+                  <div class="form-field form-field-span-2" data-field="property_type">
+                    <label class="field-label" for="estimate-property-type">Property Type</label>
+                    <select class="field-input field-select" id="estimate-property-type" name="property_type">
+                      <option value="">Select one</option>
+                      <option value="House">House</option>
+                      <option value="Apartment / Condo">Apartment / Condo</option>
+                      <option value="Commercial">Commercial</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <p class="field-error" id="error-property_type" aria-live="polite"></p>
+                  </div>
+
+                  <fieldset class="form-field form-field-span-2 form-fieldset" data-field="surfaces">
+                    <legend class="field-label">What would you like painted?</legend>
+                    <div class="choice-grid choice-grid-surfaces">
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Walls" />
+                        <span>Walls</span>
+                      </label>
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Ceilings" />
+                        <span>Ceilings</span>
+                      </label>
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Trim / Baseboards" />
+                        <span>Trim / Baseboards</span>
+                      </label>
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Doors" />
+                        <span>Doors</span>
+                      </label>
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Cabinets" />
+                        <span>Cabinets</span>
+                      </label>
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Exterior surfaces" />
+                        <span>Exterior surfaces</span>
+                      </label>
+                      <label class="choice-card choice-card-checkbox">
+                        <input class="choice-input" type="checkbox" name="surfaces" value="Not sure" />
+                        <span>Not sure</span>
+                      </label>
+                    </div>
+                    <p class="field-error" id="error-surfaces" aria-live="polite"></p>
+                  </fieldset>
+
+                  <div class="form-field" data-field="timeline">
+                    <label class="field-label" for="estimate-timeline">Project Timeline</label>
+                    <select class="field-input field-select" id="estimate-timeline" name="timeline">
+                      <option value="">Select one</option>
+                      <option value="As soon as possible">As soon as possible</option>
+                      <option value="Within 2 weeks">Within 2 weeks</option>
+                      <option value="Within 1 month">Within 1 month</option>
+                      <option value="1-3 months">1-3 months</option>
+                      <option value="Flexible / Just researching">Flexible / Just researching</option>
+                    </select>
+                    <p class="field-error" id="error-timeline" aria-live="polite"></p>
+                  </div>
+
+                  <fieldset class="form-field form-fieldset" data-field="preferred_contact">
+                    <legend class="field-label">Preferred Contact Method</legend>
+                    <div class="choice-grid choice-grid-compact">
+                      <label class="choice-card choice-card-compact">
+                        <input class="choice-input" type="radio" name="preferred_contact" value="Call" />
+                        <span>Call</span>
+                      </label>
+                      <label class="choice-card choice-card-compact">
+                        <input class="choice-input" type="radio" name="preferred_contact" value="Text" />
+                        <span>Text</span>
+                      </label>
+                      <label class="choice-card choice-card-compact">
+                        <input class="choice-input" type="radio" name="preferred_contact" value="Email" />
+                        <span>Email</span>
+                      </label>
+                      <label class="choice-card choice-card-compact">
+                        <input class="choice-input" type="radio" name="preferred_contact" value="No preference" checked />
+                        <span>No preference</span>
+                      </label>
+                    </div>
+                    <p class="field-error" id="error-preferred_contact" aria-live="polite"></p>
+                  </fieldset>
+
+                  <div class="form-field form-field-span-2" data-field="project_details">
+                    <label class="field-label" for="estimate-details">Project Details</label>
+                    <textarea
+                      class="field-input field-textarea"
+                      id="estimate-details"
+                      name="project_details"
+                      rows="6"
+                      placeholder="Tell us about the space, colors, surface condition, repairs needed, mural concept, branding requirements, or anything else we should know."
+                    ></textarea>
+                    <p class="field-error" id="error-project_details" aria-live="polite"></p>
+                  </div>
+
+                  <div class="form-field form-field-span-2" data-field="referral_source">
+                    <label class="field-label" for="estimate-referral">Referral Source</label>
+                    <select class="field-input field-select" id="estimate-referral" name="referral_source">
+                      <option value="">Select one (optional)</option>
+                      <option value="Google">Google</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="Flyer / Door Hanger">Flyer / Door Hanger</option>
+                      <option value="Referral">Referral</option>
+                      <option value="Realtor / Property Manager">Realtor / Property Manager</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <p class="field-error" id="error-referral_source" aria-live="polite"></p>
+                  </div>
+                </div>
+
+                <div class="estimate-form-actions">
+                  <button class="button estimate-submit" id="estimate-submit" type="submit">
+                    Request My Free Estimate
+                  </button>
+                  <p class="estimate-submit-note">
+                    Submitting this form does not commit you to any work or pricing.
+                  </p>
+                  <p class="form-status" id="estimate-status" aria-live="polite"></p>
+                </div>
+              </form>
+
+              <div class="estimate-success" id="estimate-success" hidden>
+                <h3>Thanks - we've received your project details.</h3>
+                <p>
+                  A member of the Dot Bros team will be in touch shortly to
+                  discuss your project and arrange an estimate.
+                </p>
+                <button class="button" id="estimate-reset" type="button">
+                  Submit Another Request
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-section" id="about">
+          <div class="section-frame about-shell">
+            <div class="section-heading about-heading">
+              <h2>Our Story.</h2>
+            </div>
+
+            <div class="about-grid">
+              <figure class="about-media-card">
+                <img
+                  class="about-image"
+                  src="/assets/hero/founder.png"
+                  alt="Dot Bros Painting Co founder"
+                />
+              </figure>
+
+              <div class="about-copy-card">
+                <p>
+                  Dot Bros Painting Co. was founded by two artists and filmmakers who
+                  came to Los Angeles to build careers in the creative industries.
+                </p>
+                <p>
+                  Outside of painting homes, you'll usually find us making films,
+                  creating artwork, DJing, producing music, designing murals and
+                  working on the many creative projects that inspire us. Painting
+                  allows us to build a business we're proud of while continuing to
+                  pursue the creative work we're passionate about.
+                </p>
+                <p>
+                  We believe every project deserves the same creativity, attention to
+                  detail and pride that we bring to our own artistic work. Whether
+                  we're repainting a bedroom or creating a custom mural, our goal is
+                  simple: deliver quality workmanship, treat people with respect and
+                  leave every space looking better than we found it.
+                </p>
+                <p>
+                  When you choose Dot Bros, you're supporting two local creatives
+                  building a future in Los Angeles while delivering a professional
+                  painting service you can rely on.
+                </p>
+                <p>Thank you for being part of our journey.</p>
+
+                <blockquote class="about-quote">
+                  <p>Painting with our passion for art.</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="location-showcase section" aria-label="Serving the LA area">
+          <div class="section-frame location-frame">
+            <div class="location-callout">
+              <p
+                class="location-copy location-copy-left"
+                data-parallax
+                data-parallax-mode="viewport"
+                data-parallax-speed="-0.22"
+                data-parallax-min="-82"
+                data-parallax-max="82"
+              >
+                Serving the
+              </p>
+              <img
+                class="hero-la-brush location-brush"
+                src="/assets/icons/LAbrush.svg"
+                alt=""
+                aria-hidden="true"
+                data-parallax
+                data-parallax-mode="viewport"
+                data-parallax-speed="0.09"
+                data-parallax-min="-30"
+                data-parallax-max="30"
+              />
+              <p
+                class="location-copy location-copy-right"
+                data-parallax
+                data-parallax-mode="viewport"
+                data-parallax-speed="-0.2"
+                data-parallax-min="-72"
+                data-parallax-max="72"
+              >
+                Area
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="section-frame footer-grid">
+          <div>
+            <a class="wordmark footer-wordmark" href="#top" aria-label="Back to top">
+              <span class="wordmark-mark">DOTBROS</span>
+              <span class="wordmark-sub">Painting Co.</span>
+            </a>
+            <p class="footer-copy">Los Angeles service area</p>
+          </div>
+
+          <div>
+            <h3>Services</h3>
+            <ul class="footer-list">
+              <li>Interior Painting</li>
+              <li>Exterior Painting</li>
+              <li>Murals and Branding</li>
+              <li>Property Maintenance</li>
+            </ul>
+          </div>
+
+          <div id="contact-panel">
+            <h3>Contact</h3>
+            <ul class="footer-list">
+              <li><a href="tel:+12133487009">(213) 348-7009</a></li>
+              <li><a href="mailto:hello@dotbrospainting.co">hello@dotbrospainting.co</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Details</h3>
+            <ul class="footer-list">
+              <li><a href="#top">Back to top</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-meta">
+          <p>&copy; <span data-current-year></span> DotBros Painting Co.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
