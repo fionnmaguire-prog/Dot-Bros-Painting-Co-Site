@@ -414,9 +414,9 @@ h3 {
 }
 
 .hero-estimate-link {
-  min-height: 5.2rem;
-  padding-inline: 2.2rem;
-  font-size: 1.28rem;
+  min-height: 4.16rem;
+  padding-inline: 1.76rem;
+  font-size: 1.02rem;
   font-weight: 800;
 }
 
@@ -428,23 +428,23 @@ h3 {
 }
 
 .hero-about-link {
-  min-height: 5.2rem;
-  padding-inline: 2.2rem;
+  min-height: 4.16rem;
+  padding-inline: 1.76rem;
   border-color: rgba(44, 38, 31, 0.14);
   background: rgba(255, 251, 246, 0.7);
-  font-size: 1.28rem;
+  font-size: 1.02rem;
   font-weight: 800;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .hero-about-link-cluster .hero-about-link {
-  min-height: 5.2rem;
+  min-height: 4.16rem;
   position: static;
 }
 
 .hero-about-link-icon {
-  width: clamp(4.6rem, 6.8vw, 6rem);
+  width: clamp(3.68rem, 5.44vw, 4.8rem);
   height: auto;
   flex: 0 0 auto;
 }
@@ -2338,7 +2338,7 @@ h3 {
   .hero-action-stack {
     top: auto;
     right: 0;
-    bottom: -17.3rem;
+    bottom: -15.2rem;
     left: 0;
     width: fit-content;
     margin-inline: auto;
@@ -2347,9 +2347,9 @@ h3 {
   }
 
   .hero-estimate-link {
-    min-height: 4.42rem;
-    padding-inline: 1.87rem;
-    font-size: 1.09rem;
+    min-height: 3.54rem;
+    padding-inline: 1.5rem;
+    font-size: 0.87rem;
   }
 
   .hero-about-link-cluster {
@@ -2357,9 +2357,9 @@ h3 {
   }
 
   .hero-about-link {
-    min-height: 4.42rem;
-    padding-inline: 1.87rem;
-    font-size: 1.09rem;
+    min-height: 3.54rem;
+    padding-inline: 1.5rem;
+    font-size: 0.87rem;
   }
 
   .hero-about-link-icon {
@@ -2367,6 +2367,10 @@ h3 {
     top: 50%;
     right: calc(100% + 0.7rem);
     transform: translateY(-50%);
+  }
+
+  .trust-strip {
+    margin-top: clamp(4.8rem, 12vw, 6.2rem);
   }
 
   .hero-logo-stack {
