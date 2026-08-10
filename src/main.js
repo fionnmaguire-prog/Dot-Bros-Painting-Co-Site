@@ -8,11 +8,13 @@ const trustItems = document.querySelectorAll('.trust-list li')
 const processSection = document.querySelector('#process')
 const processCards = document.querySelectorAll('.process-card')
 const estimateForm = document.querySelector('#estimate-form')
+const estimateSection = document.querySelector('#estimate')
 const estimateSuccess = document.querySelector('#estimate-success')
 const estimateResetButton = document.querySelector('#estimate-reset')
 const estimateStatus = document.querySelector('#estimate-status')
 const projectTypeNote = document.querySelector('#project-type-note')
 const submitButton = document.querySelector('#estimate-submit')
+const estimateLinks = document.querySelectorAll('a[href="#estimate"], [data-scroll-to-estimate]')
 const aboutSection = document.querySelector('#about')
 const aboutLinks = document.querySelectorAll('a[href="#about"]')
 
@@ -48,6 +50,10 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 let parallaxTicking = false
 let introMotionFrame = 0
 let introCurrentProgress = 0
+
+if (import.meta.env.DEV) {
+  console.log('Web3Forms key loaded:', Boolean(WEB3FORMS_ACCESS_KEY))
+}
 
 if ('scrollRestoration' in window.history) {
   window.history.scrollRestoration = 'manual'
@@ -432,15 +438,20 @@ async function submitEstimateForm(event) {
   }
 
   const formData = new FormData(estimateForm)
+  const customerEmail = String(formData.get('email') ?? '').trim()
   const selectedSurfaces = formData.getAll('surfaces').filter(Boolean)
   formData.delete('surfaces')
   formData.set('surfaces', selectedSurfaces.length > 0 ? selectedSurfaces.join(', ') : 'Not specified')
   formData.set('page_url', window.location.href)
   formData.set('access_key', WEB3FORMS_ACCESS_KEY)
+  if (customerEmail) {
+    formData.set('email', customerEmail)
+    formData.set('replyto', customerEmail)
+  }
 
   if (!WEB3FORMS_ACCESS_KEY) {
-    console.warn(
-      'VITE_WEB3FORMS_ACCESS_KEY is not set. Estimate form submissions will fail until you add it to a local .env file or deployment environment.',
+    console.error(
+      'VITE_WEB3FORMS_ACCESS_KEY is not set. Estimate form submission is disabled until you add the key in your environment.',
     )
     setEstimateStatus(
       'Something went wrong while sending your request. Please try again, or contact us directly.',
@@ -509,8 +520,8 @@ function initializeEstimateForm() {
   }
 
   if (!WEB3FORMS_ACCESS_KEY) {
-    console.warn(
-      'VITE_WEB3FORMS_ACCESS_KEY is not set. The estimate form UI will work locally, but submissions will fail until the key is configured.',
+    console.error(
+      'VITE_WEB3FORMS_ACCESS_KEY is not set. The estimate form UI will render, but Web3Forms submissions are disabled until the key is configured.',
     )
   }
 
@@ -521,6 +532,56 @@ function initializeEstimateForm() {
 
   estimateResetButton?.addEventListener('click', resetEstimateForm)
   updateProjectTypeMessaging()
+}
+
+function focusEstimateForm() {
+  if (!estimateForm) {
+    return
+  }
+
+  const firstField = estimateForm.querySelector('#estimate-name')
+  firstField?.focus({ preventScroll: true })
+}
+
+function revealEstimateForm() {
+  if (!estimateForm) {
+    return
+  }
+
+  if (!estimateForm.hidden) {
+    return
+  }
+
+  resetEstimateForm()
+}
+
+function scrollToEstimateForm() {
+  if (!estimateSection) {
+    return
+  }
+
+  revealEstimateForm()
+  estimateSection.scrollIntoView({
+    behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+    block: 'start',
+  })
+
+  window.setTimeout(() => {
+    focusEstimateForm()
+  }, prefersReducedMotion.matches ? 0 : 450)
+}
+
+function initializeEstimateLinks() {
+  if (!estimateSection || estimateLinks.length === 0) {
+    return
+  }
+
+  estimateLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault()
+      scrollToEstimateForm()
+    })
+  })
 }
 
 function clearAboutHash() {
@@ -571,4 +632,5 @@ updateParallax()
 initializeTrustReveal()
 initializeProcessReveal()
 initializeEstimateForm()
+initializeEstimateLinks()
 initializeAboutLinks()
