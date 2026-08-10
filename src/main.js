@@ -22,6 +22,7 @@ const aboutLinks = document.querySelectorAll('a[href="#about"]')
 // or deployment environment using VITE_WEB3FORMS_ACCESS_KEY.
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
 const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? ''
+const GOOGLE_ADS_CONVERSION_DESTINATION = 'AW-18379296580/W190CJTjvt8cEMSe97tE'
 const projectTypeNoteValues = new Set([
   'Exterior Painting',
   'Interior + Exterior',
@@ -424,6 +425,34 @@ function setEstimateSubmitting(isSubmitting) {
     : 'Request My Free Estimate'
 }
 
+function trackEstimateConversion() {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      send_to: GOOGLE_ADS_CONVERSION_DESTINATION,
+    })
+  }
+}
+
+function focusEstimateSuccess() {
+  if (!estimateSuccess) {
+    return
+  }
+
+  const successButton = estimateSuccess.querySelector('button, [href], [tabindex]:not([tabindex="-1"])')
+  successButton?.focus({ preventScroll: true })
+}
+
+function keepEstimateSectionInView() {
+  if (!estimateSection) {
+    return
+  }
+
+  estimateSection.scrollIntoView({
+    behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+    block: 'start',
+  })
+}
+
 async function submitEstimateForm(event) {
   event.preventDefault()
 
@@ -477,6 +506,7 @@ async function submitEstimateForm(event) {
       throw new Error(result?.message || 'Web3Forms submission failed.')
     }
 
+    trackEstimateConversion()
     estimateForm.reset()
     updateProjectTypeMessaging()
     clearEstimateErrors()
@@ -486,6 +516,10 @@ async function submitEstimateForm(event) {
     if (estimateSuccess) {
       estimateSuccess.hidden = false
     }
+    keepEstimateSectionInView()
+    window.setTimeout(() => {
+      focusEstimateSuccess()
+    }, prefersReducedMotion.matches ? 0 : 450)
   } catch (error) {
     console.error('Estimate form submission failed:', error)
     setEstimateStatus(
