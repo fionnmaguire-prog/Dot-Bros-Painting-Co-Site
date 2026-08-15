@@ -17,6 +17,12 @@ const submitButton = document.querySelector('#estimate-submit')
 const estimateLinks = document.querySelectorAll('a[href="#estimate"], [data-scroll-to-estimate]')
 const aboutSection = document.querySelector('#about')
 const aboutLinks = document.querySelectorAll('a[href="#about"]')
+const FRAGMENT_SECTION_SELECTORS = new Map([
+  ['#estimate', '#estimate'],
+  ['#services', '#services'],
+  ['#pricing', '#pricing'],
+  ['#about', '#about'],
+])
 
 // Web3Forms configuration lives here. Add the real access key in a local .env file
 // or deployment environment using VITE_WEB3FORMS_ACCESS_KEY.
@@ -605,6 +611,60 @@ function scrollToEstimateForm() {
   }, prefersReducedMotion.matches ? 0 : 450)
 }
 
+function setLocationHash(hash) {
+  const nextUrl = `${window.location.pathname}${window.location.search}${hash}`
+  window.history.replaceState(null, '', nextUrl)
+}
+
+function getSectionForHash(hash) {
+  const selector = FRAGMENT_SECTION_SELECTORS.get(hash)
+  if (!selector) {
+    return null
+  }
+
+  return document.querySelector(selector)
+}
+
+function scrollToHashSection(hash, updateHash = false) {
+  if (hash === '#estimate') {
+    if (updateHash) {
+      setLocationHash(hash)
+    }
+    scrollToEstimateForm()
+    return
+  }
+
+  const targetSection = getSectionForHash(hash)
+  if (!targetSection) {
+    return
+  }
+
+  if (updateHash) {
+    setLocationHash(hash)
+  }
+
+  targetSection.scrollIntoView({
+    behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+    block: 'start',
+  })
+}
+
+function initializeFragmentSectionLinks() {
+  const initialHash = window.location.hash
+
+  if (FRAGMENT_SECTION_SELECTORS.has(initialHash)) {
+    window.setTimeout(() => {
+      scrollToHashSection(initialHash)
+    }, getIntroMode() === 'play' ? INTRO_DURATION_MS : REDUCED_MOTION_REVEAL_MS)
+  }
+
+  window.addEventListener('hashchange', () => {
+    if (FRAGMENT_SECTION_SELECTORS.has(window.location.hash)) {
+      scrollToHashSection(window.location.hash)
+    }
+  })
+}
+
 function initializeEstimateLinks() {
   if (!estimateSection || estimateLinks.length === 0) {
     return
@@ -613,34 +673,20 @@ function initializeEstimateLinks() {
   estimateLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault()
-      scrollToEstimateForm()
+      scrollToHashSection('#estimate', true)
     })
   })
 }
 
-function clearAboutHash() {
-  if (window.location.hash !== '#about') {
-    return
-  }
-
-  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
-}
-
 function initializeAboutLinks() {
   if (!aboutSection || aboutLinks.length === 0) {
-    clearAboutHash()
     return
   }
-
-  clearAboutHash()
 
   aboutLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault()
-      aboutSection.scrollIntoView({
-        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
-        block: 'start',
-      })
+      scrollToHashSection('#about', true)
     })
   })
 }
@@ -668,3 +714,4 @@ initializeProcessReveal()
 initializeEstimateForm()
 initializeEstimateLinks()
 initializeAboutLinks()
+initializeFragmentSectionLinks()
