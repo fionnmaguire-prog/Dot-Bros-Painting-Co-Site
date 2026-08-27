@@ -34,6 +34,7 @@ const projectTypeNoteValues = new Set([
   'Interior + Exterior',
   'Mural',
   'Branding / Graphics',
+  'Listing / Property Refresh',
 ])
 
 // Local testing option: use 'always' to run on every refresh, or 'session' to only play once per browser session.
