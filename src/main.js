@@ -19,7 +19,7 @@ const aboutSection = document.querySelector('#about')
 const aboutLinks = document.querySelectorAll('a[href="#about"]')
 const FRAGMENT_SECTION_SELECTORS = new Map([
   ['#estimate', '#estimate'],
-  ['#services', '#services'],
+  ['#services', '.services-grid'],
   ['#pricing', '#pricing'],
   ['#about', '#about'],
 ])
@@ -617,6 +617,14 @@ function setLocationHash(hash) {
   window.history.replaceState(null, '', nextUrl)
 }
 
+function clearLocationHash() {
+  if (!window.location.hash) {
+    return
+  }
+
+  setLocationHash('')
+}
+
 function getSectionForHash(hash) {
   const selector = FRAGMENT_SECTION_SELECTORS.get(hash)
   if (!selector) {
@@ -656,6 +664,11 @@ function initializeFragmentSectionLinks() {
   if (FRAGMENT_SECTION_SELECTORS.has(initialHash)) {
     window.setTimeout(() => {
       scrollToHashSection(initialHash)
+
+      // Keep direct estimate deep links working without pinning future reloads there.
+      if (initialHash === '#estimate') {
+        clearLocationHash()
+      }
     }, getIntroMode() === 'play' ? INTRO_DURATION_MS : REDUCED_MOTION_REVEAL_MS)
   }
 
@@ -674,7 +687,8 @@ function initializeEstimateLinks() {
   estimateLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault()
-      scrollToHashSection('#estimate', true)
+      clearLocationHash()
+      scrollToHashSection('#estimate')
     })
   })
 }
